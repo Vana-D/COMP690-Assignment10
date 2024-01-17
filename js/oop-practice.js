@@ -1,3 +1,9 @@
+/*
+    Project: Assignment 10: Practice with JavaScript OOP Concepts
+    Date: 01/17/24
+    Author: Van Do
+*/
+
 // STEP 1   ---------------------------------------------------------
 
 //  NAMED DECLARATION - CONSTRUCTOR SYNTAX
