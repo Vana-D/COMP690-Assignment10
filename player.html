@@ -13,7 +13,7 @@
     <div class="container px-4">            
         <div class="row">
             <div class="col col-md-8">
-                <div class="card card-body mt-5">
+                <div class="card card-body mt-5" id="card">
                     <h1 class="title mb-4">The Music Player</h1>
                     <!-- ADD DROP DOWN MENU -->
                     <label for="albumNames">Choose an album:</label>
@@ -24,6 +24,9 @@
                             id="playBtn">Play</button>
                     </div>
                     <!-- ADD SHOW FAVORITE ALBUM BUTTON -->
+                    <div class="d-grid gap-2 my-3 d-md-block "> <button type="button" class="btn btn-secondary d-none"
+                        id="favBtn">Favorite Album</button>
+                    </div>
                     <p id="favoriteAlbum"></p>
                 </div>
             </div>
