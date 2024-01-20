@@ -122,11 +122,3 @@ String.prototype.findWords = function (word) {
 
 text.findWords('the');
 
-
-
-
-
-
-
-
-

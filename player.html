@@ -9,7 +9,6 @@
     <script src="js/player.js" defer></script>
 </head>
 <body>
-
     <div class="container px-4">            
         <div class="row">
             <div class="col col-md-8">
@@ -17,20 +16,21 @@
                     <h1 class="title mb-4">The Music Player</h1>
                     <!-- ADD DROP DOWN MENU -->
                     <label for="albumNames">Choose an album:</label>
-                    <select name="albumNames" id="albumNames"></select>
+                    <select name="albumNames" id="albumNames">
+                    </select>
                     <br>
                     <!-- ADD PLAY BUTTON -->
-                    <div class="d-grid gap-2 d-md-block"> <button type="button" class="btn btn-secondary"
-                            id="playBtn">Play</button>
+                    <div class="d-grid gap-2 d-md-block"> 
+                        <button type="button" class="btn btn-secondary" id="playBtn">Play</button>
                     </div>
                     <!-- ADD SHOW FAVORITE ALBUM BUTTON -->
-                    <div class="d-grid gap-2 my-3 d-md-block "> <button type="button" class="btn btn-secondary d-none"
-                        id="favBtn">Favorite Album</button>
+                    <div class="d-grid gap-2 my-3 d-md-block "> 
+                        <button type="button" class="btn btn-secondary d-none" id="favBtn">Favorite Album</button>
                     </div>
                     <p id="favoriteAlbum"></p>
                 </div>
             </div>
         </div>
-    </div>        
+    </div>     
 </body>
 </html>
