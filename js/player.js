@@ -6,6 +6,7 @@
 
 // HELPER FUNCTION TO RETURN DOM ELEMENTS
 const $ = (id) => { return document.getElementById(id)};
+
 class Jukebox {
     constructor(albums) {
         this.albums = []
@@ -18,7 +19,7 @@ class Jukebox {
         for (const [index, album] of this.albums.entries()) {
             let option = document.createElement('option');
             albumNames.appendChild(option);
-            option.value = index;
+            option.value = album.artist;
             option.innerHTML = (`"${album.title}" - Artist: ${album.artist}`)
         }
     }
@@ -41,41 +42,42 @@ class Album {
     }
     play = function() {
         this.played += 1; 
+        console.log('"' + this.title + '" by: ' + this.artist + ' has played ' + this.played + ' times.')
     }
     display = function() {
-        return `${this.artist} : ${this.title}. The album has been played ${this.played} times.`
+        return `${this.artist}: "${this.title}". The album has been played ${this.played} times.`
     }
 }
 
-const jbox = new Jukebox();
+const jBox = new Jukebox();
 const album1 = new Album('Operation Ivy', 'Energy');
 const album2 = new Album('Blink 182', 'Dude Ranch');
 const album3 = new Album('New Found Glory', 'Sticks and Stones');
 
-jbox.addAlbum(album1);
-jbox.addAlbum(album2);
-jbox.addAlbum(album3);
-jbox.addOptions();
+jBox.addAlbum(album1);
+jBox.addAlbum(album2);
+jBox.addAlbum(album3);
+jBox.addOptions();
 
-let albums = jbox.albums;
-console.log(albums);
+let albums = jBox.albums;
 
 playBtn.addEventListener('click', (e) => {
     e.preventDefault();  
     favBtn.classList.remove('d-none');
-    for ( Object.value in albums) {
-      return `${jbox.albums[Object.value].play()}`
+    let index = albumNames.selectedIndex;
+    // let value = e.target.value;
+    if (index === 0){
+        album1.play();
+    } else if (index === 1){
+        album2.play();
+    } else if (index === 2){
+        album3.play();
+    } else {
+        console.log("An error has occurred.");
     }
-})
-
-// album1.play()
-// album2.play()
-// album2.play()
-// album2.play()
-// album2.play()
-// album2.play()
-// album3.play()
+});
 
 favBtn.addEventListener("click", () => {
-    favoriteAlbum.innerHTML =  (`Your favorite album is: ${jbox.favoriteAlbum()}`)
-})
+    favoriteAlbum.innerHTML =  (`Your favorite album is: ${jBox.favoriteAlbum()}`);
+    console.log(albums);
+});
